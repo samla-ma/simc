@@ -1,0 +1,78 @@
+#img-viewer-overlay {
+    position: fixed; /* Stays in place relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    display: flex; /* Use flexbox to center its child */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+#img-viewer-modal {
+    
+    padding: 10px;
+    width: 80%; /* Adjust width as needed */
+    min-width:300px;
+
+    border-radius: 1rem;
+    background-color: #eee;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;    
+}
+
+.img-canvas {
+    background-color: #3b3b3b;
+    height: 100%;
+    width:100%;
+    margin:0 auto;
+    text-align: center ;
+    align-content: center;
+    border-radius: 0.5rem;
+    padding : 1rem;
+    box-sizing: border-box;
+}
+
+#image{
+    margin:0 auto;
+}
+
+.btn-container{
+    height:auto;
+    display:flex;
+    gap:1rem;
+    justify-content: center;
+}
+
+.img-viewer-btn {
+    width: 40px;
+    height: 40px;
+    background-image: url("/images/img-viewer-btns.svg");
+    background-size: auto 100%;
+    background-position-y: 0;
+    opacity: 1;
+    border: 0px;
+}
+
+.img-viewer-btn.inactive {
+    opacity: 0.3;
+}
+
+.img-viewer-btn-back {
+    background-position-x: 0;
+}
+
+.img-viewer-btn-close {
+    background-position-x: 40px;
+}
+
+.img-viewer-btn-forward {
+    background-position-x: 81px;
+}

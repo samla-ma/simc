@@ -1,5 +1,5 @@
 //import { useState, useEffect } from "react";
-import ImgViewer from "./components/ImgViewer";
+import ImgViewer from "./components/ImgViewer/ImgViewer";
 
 import "./App.css";
 

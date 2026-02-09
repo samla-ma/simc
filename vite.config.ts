@@ -17,10 +17,10 @@ export default defineConfig({
   build: {
     lib: {
       // Путь к файлу вашего компонента
-      entry: resolve(__dirname, 'src/load-img-viewer.tsx'),
-      name: 'ImgViewer',
+      entry: resolve(__dirname, 'src/load-simc.tsx'),
+      name: 'Simc', // Simple Image Manipulation Components
       formats: ['umd', 'es'],
-      fileName: (format) => `img-viewer.${format}.js`,
+      fileName: (format) => `simc.${format}.js`,
     },
     // ВАЖНО: Если вы хотите, чтобы React был ВНУТРИ файла, 
     // удалите 'react' из rollupOptions.external.

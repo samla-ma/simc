@@ -1,12 +1,8 @@
-import "./CloseBtn.css";
-
 const CloseBtn = ({ onClick }: { onClick?: () => void }) => {
   return (
     <>
-      <img
-        className="close-btn"
-        src="/images/ugly.webp"
-        alt="Close"
+      <div
+        className={`img-viewer-btn img-viewer-btn-close`}
         onClick={onClick}
       />
     </>
