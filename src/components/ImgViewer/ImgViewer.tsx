@@ -4,7 +4,7 @@ import CloseBtn from "./CloseBtn";
 import "./ImgViewer.css";
 
 const ImgViewer = ({ selectorStr }: { selectorStr: string }) => {
-    console.log("ImgViewer props:", { selectorStr });
+    //console.log("ImgViewer props:", { selectorStr });
 
     const [isVisible, setIsVisible] = useState(false);
     const [currentIdx, setCurrentIdx] = useState(-1);
@@ -34,7 +34,7 @@ const ImgViewer = ({ selectorStr }: { selectorStr: string }) => {
         } else {
             console.log("ImgViewer props: no selectorStr");
         }
-        console.log("attachements:", { attachments });
+        // console.log("attachements:", { attachments });
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setAttachmentList(attachments);
 
@@ -61,8 +61,8 @@ const ImgViewer = ({ selectorStr }: { selectorStr: string }) => {
 
     return (
         isVisible && (
-            <div id="img-viewer-overlay">
-                <div id="img-viewer-modal">
+            <div id="img-viewer-overlay" onClick={closeClick}>
+                <div id="img-viewer-modal" onClick={(event) => event.stopPropagation()}>
                     <div className="img-canvas">
                         <img
                             id="image"
