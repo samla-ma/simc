@@ -1,0 +1,21 @@
+.align-section {
+    background-color: var(--gray);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.align-section-title {
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}

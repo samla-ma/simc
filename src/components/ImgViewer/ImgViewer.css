@@ -16,6 +16,7 @@
     padding: 10px;
     width: 80%; /* Adjust width as needed */
     min-width:300px;
+    height:90%;
 
     border-radius: 1rem;
     background-color: #eee;
@@ -38,10 +39,15 @@
     border-radius: 0.5rem;
     padding : 1rem;
     box-sizing: border-box;
+    flex: 1 1 100%;
 }
 
 #image{
     margin:0 auto;
+    max-width:1200px;
+    max-height:80vh;
+    width: auto;
+    height: auto;
 }
 
 .btn-container{
@@ -49,6 +55,8 @@
     display:flex;
     gap:1rem;
     justify-content: center;
+    flex: 0 0 0;
+    min-height: 40px;
 }
 
 .img-viewer-btn {
@@ -59,6 +67,11 @@
     background-position-y: 0;
     opacity: 1;
     border: 0px;
+    cursor: pointer;
+}
+
+.img-viewer-btn:hover{
+    filter:brightness(0.5);
 }
 
 .img-viewer-btn.inactive {
