@@ -1,10 +1,12 @@
+@import "../common.css";
+
 #img-viewer-overlay {
     position: fixed; /* Stays in place relative to the viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
     display: flex; /* Use flexbox to center its child */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -12,80 +14,72 @@
 }
 
 #img-viewer-modal {
-    
     padding: 10px;
     width: 80%; /* Adjust width as needed */
-    min-width:300px;
-    height:90%;
+    min-width: 300px;
+    height: 90%;
 
     border-radius: 1rem;
-    background-color: #eee;
-    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.3);
+    /* background-color: #eee; */
+    background-color: rgba(0, 0, 0, 0);
+    /* box-shadow: 0 10px 8px rgba(0, 0, 0, 0.3); */
 
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .img-canvas {
-    background-color: #3b3b3b;
+    background-color: rgba(0, 0, 0, 0);
+
     height: 100%;
-    width:100%;
-    margin:0 auto;
-    text-align: center ;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
     align-content: center;
     border-radius: 0.5rem;
-    padding : 1rem;
+    padding: 1rem;
     box-sizing: border-box;
     flex: 1 1 100%;
 }
 
-#image{
-    margin:0 auto;
-    max-width:1200px;
-    max-height:80vh;
+#image {
+    margin: 0 auto;
+    max-width: 1200px;
+    max-height: 80vh;
     width: auto;
     height: auto;
 }
 
-.btn-container{
-    height:auto;
-    display:flex;
-    gap:1rem;
+.btn-container {
+    height: auto;
+    display: flex;
+    gap: 1.5rem;
     justify-content: center;
+    align-items: center;
     flex: 0 0 0;
     min-height: 40px;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: var(--gray);
 }
 
 .img-viewer-btn {
-    width: 40px;
-    height: 40px;
-    background-image: url("/images/img-viewer-btns.svg");
+    font-size: 3rem;
     background-size: auto 100%;
     background-position-y: 0;
     opacity: 1;
     border: 0px;
     cursor: pointer;
+    color: var(--button-color);
 }
 
-.img-viewer-btn:hover{
-    filter:brightness(0.5);
+.img-viewer-btn:hover:not(.inactive) {
+    color: var(--button-hover-color);
 }
 
 .img-viewer-btn.inactive {
     opacity: 0.3;
-}
-
-.img-viewer-btn-back {
-    background-position-x: 0;
-}
-
-.img-viewer-btn-close {
-    background-position-x: 40px;
-}
-
-.img-viewer-btn-forward {
-    background-position-x: 81px;
 }

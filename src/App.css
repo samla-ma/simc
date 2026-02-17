@@ -40,3 +40,32 @@
 .read-the-docs {
   color: #888;
 } */
+
+.file-open-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+}
+
+.file-open-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #666;
+}
+
+.file-open-input {
+  font-size: 12px;
+}
+
+.file-open-button {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.file-open-name {
+  font-size: 12px;
+  color: #666;
+}

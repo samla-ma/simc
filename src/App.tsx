@@ -1,45 +1,65 @@
-//import { useState, useEffect } from "react";
-import ImgScaler from "./components/ImgScaler/ImgScaler";
-
+// import { useState } from "react";
+// import ImgScaler from "./components/ImgScaler/ImgScaler";
+// import type { ImgScalerCfg } from "./components/ImgScaler/ImgScaler";
+// import cfg from "./cfg.json";
 
 import "./App.css";
 
 function App() {
-    return (
-        <>
-            <div style={{ padding: "10px", color: "#666", fontSize: "12px" }}>
-                React App mounted. Click images to view!
-            </div>
-            {
-                <>
-                    <ImgScaler 
-                    mainTitle="Image setup"
-                    imgName="Image name"
-                    widthStr="Width"
-                    heightStr="Height"
-                    resizeSectionTitle="Resize image"
-                    resizeThumbnailSectionTitle="Resize thumbnail"
-                    thumbnailSectionTitle="Thumbnail settings"
-                    applyActionStr="Apply"
-                    alignSectionTitle="Image alignment"
-                    alignLeftStr="Left"
-                    alignCenterStr="Center"
-                    alignRightStr="Right"
-                    imgInitWidth={800}
-                    imgInitHeight={600}
-                    imgMaxWidth={2000}
-                    imgMaxHeight={2000}
-                    thumbInitWidth={200}
-                    thumbInitHeight={150}
-                    thumbMaxWidth={500}
-                    thumbMaxHeight={500}
-                    okActionStr="OK"
-                    cancelActionStr="Cancel"
-                    />
-                </>
-            }
-        </>
-    );
+//     const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+//     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+//         const file = event.target.files?.[0] ?? null;
+//         setSelectedFile(file);
+ 
+//     };
+
+// const [draftTitle, setDraftTitle] = useState("");
+
+// const [title, setTitle] = useState("");
+
+//     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+//         event.preventDefault();
+//         if (!selectedFile) {
+//             return;
+//         }
+//         // Placeholder for opening/processing the file.
+//     };
+
+//     return (
+//         <>
+//             <h1>{title}</h1>
+//             <form className="file-open-form" onSubmit={handleSubmit}>
+//                 <label className="file-open-label">
+//                     Open file
+//                     <input
+//                         className="file-open-input"
+//                         type="file"
+//                         onChange={handleFileChange}
+//                     />
+//                 </label>
+
+//                 <button className="apply-button" onClick={() => setTitle(draftTitle)}>
+//                     Apply title
+//                 </button>
+
+//                 <input 
+//                     value={draftTitle}
+//                     onChange={(e) => setDraftTitle(e.target.value)}
+//                     placeholder="Enter title" 
+//                 />
+
+//             </form>
+
+//             {selectedFile && (
+//                 <ImgScaler 
+//                     cfg={cfg as ImgScalerCfg}
+//                     file={selectedFile}
+//                     />
+//             )}
+//         </>
+//     );
+    return <></>;
 }
 
 export default App;

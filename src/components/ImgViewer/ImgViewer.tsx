@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import MoveBtn from "./MoveBtn";
-import CloseBtn from "./CloseBtn";
-import "./ImgViewer.css";
+// import MoveBtn from "./MoveBtn";
+// import CloseBtn from "./CloseBtn";
+//import "./ImgViewer.css";
+import { FaCircleLeft, FaCircleRight, FaCircleXmark } from "react-icons/fa6";
 
 const ImgViewer = ({ selectorStr }: { selectorStr: string }) => {
     //console.log("ImgViewer props:", { selectorStr });
@@ -62,7 +63,7 @@ const ImgViewer = ({ selectorStr }: { selectorStr: string }) => {
     return (
         isVisible && (
             <div id="img-viewer-overlay" onClick={closeClick}>
-                <div id="img-viewer-modal" onClick={(event) => event.stopPropagation()}>
+                <div id="img-viewer-modal">
                     <div className="img-canvas">
                         <img
                             id="image"
@@ -71,20 +72,27 @@ const ImgViewer = ({ selectorStr }: { selectorStr: string }) => {
                                     ? attachmentList[currentIdx].url
                                     : ""
                             }
+                            onClick={(event) => event.stopPropagation()}
                         />
                     </div>
-                    <div className="btn-container">
-                        <MoveBtn
-                            forward={false}
-                            active={currentIdx > 0}
-                            onClick={moveLeftClick}
-                        />
-                        <CloseBtn onClick={closeClick} />
-                        <MoveBtn
-                            forward={true}
-                            active={currentIdx < attachmentList.length - 1}
-                            onClick={moveRightClick}
-                        />
+                    <div className="btn-container" onClick={(event) => event.stopPropagation()}>
+                        {
+                            <>
+                                <FaCircleLeft
+                                    className={`img-viewer-btn ${currentIdx <= 0 ? "inactive" : ""}`}
+                                    onClick={moveLeftClick}
+                                />
+                                <FaCircleXmark
+                                    className="img-viewer-btn"
+                                    onClick={closeClick}
+                                />
+                                <FaCircleRight
+                                    className={`img-viewer-btn ${currentIdx >= attachmentList.length - 1 ? "inactive" : ""}`}
+                                    onClick={moveRightClick}
+                                />
+                            </>
+                            
+                        }
                     </div>
                 </div>
             </div>

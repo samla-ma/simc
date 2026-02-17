@@ -1,0 +1,22 @@
+{
+    "mainTitle": "Настройки изображения",
+    "imgName": "Имя файла",
+    "widthStr": "Ширина",
+    "heightStr": "Высота",
+    "resizeSectionTitle": "Изменение размера изображения",
+    "thumbnailSectionTitle": "Миниатюра",
+
+    "alignSectionTitle": "Выравнивание",
+    "alignLeftStr": "Миниатюра слева, текст справа",
+    "alignCenterStr": "Миниатюра по центру, текст сверху/снизу",
+    "alignRightStr": "Миниатюра справа, текст слева",
+
+    "applyActionStr": "Применить",
+    "cancelActionStr": "Отмена",
+    "okActionStr": "ОК",
+
+    "maxSize": { "width": 1200, "height": 800
+    },
+    "thumbMaxSize": { "width": 300, "height": 200
+    }
+}

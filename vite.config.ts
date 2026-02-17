@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 // added for component:
 import { resolve } from 'path'
@@ -8,14 +9,16 @@ import { resolve } from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), cssInjectedByJsPlugin()],
   define: {
     'process.env.NODE_ENV': '"production"',
   },
 
   // added for component:
   build: {
+    cssCodeSplit: false, 
     lib: {
+
       // Путь к файлу вашего компонента
       entry: resolve(__dirname, 'src/load-simc.tsx'),
       name: 'Simc', // Simple Image Manipulation Components
@@ -29,6 +32,7 @@ export default defineConfig({
       // Исключаем React из сборки, чтобы не дублировать его у потребителя
       //external: ['react', 'react-dom', 'react-dom/client'],
       output: {
+        manualChunks: undefined,
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
