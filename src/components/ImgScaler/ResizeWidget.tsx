@@ -1,26 +1,26 @@
 import { useEffect, useState, useRef } from "react";
-import "./ResizeSection.css";
+import "./ResizeWidget.css";
 
 export interface ImgSize {
     width: number;
     height: number;
 }
-export interface ResizeSectionCfg {
+export interface ResizeWidgetCfg {
     widthStr: string;
     heightStr: string;
     title: string;
     actionStr: string;
     maxImgSize: ImgSize;
 }
-export interface ResizeSectionProps {
+export interface ResizeWidgetProps {
     optional?: boolean;
     imgSize: ImgSize;
-    cfg: ResizeSectionCfg;
+    cfg: ResizeWidgetCfg;
     onChange?: (newSize: ImgSize) => void;
     onEnableChange?: (enabled: boolean) => void;
 }
 
-const ResizeSection = (props: ResizeSectionProps) => {
+const ResizeWidget = (props: ResizeWidgetProps) => {
     const badProps = !props.cfg.maxImgSize.height || !props.cfg.maxImgSize.width;
     const aspectRatio = badProps
         ? 1
@@ -104,7 +104,7 @@ const ResizeSection = (props: ResizeSectionProps) => {
 
     if (badProps) {
         console.log(
-            "Invalid maxImgSize, skipping ResizeSection render: ",
+            "Invalid maxImgSize, skipping ResizeWidget render: ",
             props.cfg.maxImgSize,
         );
         return null;
@@ -178,4 +178,4 @@ const ResizeSection = (props: ResizeSectionProps) => {
     );
 };
 
-export default ResizeSection;
+export default ResizeWidget;

@@ -1,13 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import ResizeWidget from "./ResizeWidget";
+import AlignSection from "./AlignWidget";
 
-import ResizeSection from "./ResizeSection";
 
-import AlignSection from "./AlignSection";
-//import "../common.css";
-//import "./ImgScaler.css";
-
-import type { ImgSize } from "./ResizeSection";
-import type { Alignment } from "./AlignSection";
+import type { ImgSize } from "./ResizeWidget";
+import type { Alignment } from "./AlignWidget";
 
 export interface ImgScalerCfg {
     mainTitle: string;
@@ -215,7 +212,7 @@ const ImgScaler = (props: ImgScalerProps) => {
                             {originalImgSize.width > 0 &&
                                 originalImgSize.height > 0 && (
                                     <>
-                                        <ResizeSection
+                                        <ResizeWidget
                                             optional={false}
                                             imgSize={originalImgSize}
                                             cfg={{
@@ -227,7 +224,7 @@ const ImgScaler = (props: ImgScalerProps) => {
                                             }}
                                             onChange={onApplyImgResize}
                                         />
-                                        <ResizeSection
+                                        <ResizeWidget
                                             optional={true}
                                             imgSize={originalImgSize}
                                             cfg={{

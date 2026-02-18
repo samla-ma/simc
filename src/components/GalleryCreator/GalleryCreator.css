@@ -1,6 +1,4 @@
 @import "../common.css";
-@import "../ResizeWidget.css";
-@import "./AlignWidget.css";
 
 #img-scaler-overlay {
     position: fixed; /* Stays in place relative to the viewport */
@@ -60,7 +58,7 @@
     margin:1rem;
 }
 
-.image-preview-section {
+.gallery-preview-section {
     /* padding: 1.5rem; */
     display: flex; 
     justify-content: center;
@@ -68,6 +66,8 @@
 
     min-height: 200px;
     flex: 1 0 0;
+    flex-wrap:wrap;
+    gap: 1rem;
 }
 
 .preview-image {

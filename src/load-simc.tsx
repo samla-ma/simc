@@ -1,10 +1,11 @@
 import { createRoot } from "react-dom/client";
 import ImgViewer from "./components/ImgViewer/ImgViewer";
 import ImgScaler from "./components/ImgScaler/ImgScaler";
+import GalleryCreator from "./components/GalleryCreator/GalleryCreator";
 
 import scalerStyles from "./components/ImgScaler/ImgScaler.css?inline";
 import viewerStyles from "./components/ImgViewer/ImgViewer.css?inline";
-
+import galCreatorStyles from "./components/GalleryCreator/GalleryCreator.css?inline";
 // Import any necessary global CSS or context providers here
 const useShadowHost = true; // Set to true if you want to use Shadow DOM for isolation
 
@@ -68,6 +69,20 @@ export function loadImgScaler(
 }
 
 export function unloadImgScaler(elementId: string) {
+    const { root } = getRoot(useShadowHost, elementId);
+    root.unmount();
+}
+
+export function loadGalleryCreator(
+    elementId: string,
+    props: React.ComponentProps<typeof GalleryCreator>,
+) {
+    const { root, styleRoot } = getRoot(useShadowHost, elementId);
+    injectStyle(styleRoot, galCreatorStyles);
+    root.render(<GalleryCreator {...props} />);
+}
+
+export function unloadGalleryCreator(elementId: string) {
     const { root } = getRoot(useShadowHost, elementId);
     root.unmount();
 }

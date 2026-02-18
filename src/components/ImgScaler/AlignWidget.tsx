@@ -1,20 +1,20 @@
 import { useState } from "react";
-import "./AlignSection.css";
+import "./AlignWidget.css";
 
 export type Alignment = 'left' | 'right' | 'none';
 
-interface AlignSectionCfg {
+interface AlignWidgetCfg {
     alignLeftStr: string;
     alignRightStr: string;
     alignCenterStr: string;
     title: string;
 }
-interface AlignSectionProps {
-    cfg: AlignSectionCfg;
+interface AlignWidgetProps {
+    cfg: AlignWidgetCfg;
     onChange?: (alignment: Alignment) => void;
 }
 
-const AlignSection = (props: AlignSectionProps) => {
+const AlignWidget = (props: AlignWidgetProps) => {
     const [alignment, setAlignment] = useState<Alignment>('none');
 
     return (
@@ -76,4 +76,4 @@ const AlignSection = (props: AlignSectionProps) => {
     );
 };
 
-export default AlignSection;
+export default AlignWidget;
