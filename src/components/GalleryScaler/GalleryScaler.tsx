@@ -222,62 +222,62 @@ const GalleryScaler = (props: GalleryScalerProps) => {
                             />
                         ))}
                     </div>
-                        <div className="dimension-input-section">
-                            <strong>{cfg.resizerTitle}</strong>
-                            <>
-                                <label>
-                                    {props.cfg?.imageLabelStr ||
-                                        defaultCfg.imageLabelStr}
-                                    <input
-                                        className="number-input"
-                                        type="number"
-                                        min="1"
-                                        max={
-                                            props.cfg?.imgMaxDimension ||
-                                            defaultCfg.imgMaxDimension
-                                        }
-                                        name="imgDimension"
-                                        value={imgDimension}
-                                        onChange={(e) =>
-                                            setImageDimension(
-                                                Number(e.target.value),
-                                            )
-                                        }
-                                        onKeyDown={onKeyDownPreventMinus}
-                                    />
-                                </label>
+                    <div className="dimension-input-section">
+                        <strong>{cfg.resizerTitle}</strong>
+                        <>
+                            <label>
+                                {props.cfg?.imageLabelStr ||
+                                    defaultCfg.imageLabelStr}
+                                <input
+                                    className="number-input"
+                                    type="number"
+                                    min="1"
+                                    max={
+                                        props.cfg?.imgMaxDimension ||
+                                        defaultCfg.imgMaxDimension
+                                    }
+                                    name="imgDimension"
+                                    value={imgDimension}
+                                    onChange={(e) =>
+                                        setImageDimension(
+                                            Number(e.target.value),
+                                        )
+                                    }
+                                    onKeyDown={onKeyDownPreventMinus}
+                                />
+                            </label>
 
-                                <label>
-                                    {props.cfg?.thumbnailLabelStr ||
-                                        defaultCfg.thumbnailLabelStr}
-                                    <input
-                                        className="number-input"
-                                        type="number"
-                                        min="1"
-                                        name="thumbDimension"
-                                        max={
-                                            props.cfg?.thumbMaxDimension ||
-                                            defaultCfg.thumbMaxDimension
-                                        }
-                                        value={thumbDimension}
-                                        onChange={(e) =>
-                                            setThumbDimension(
-                                                Number(e.target.value),
-                                            )
-                                        }
-                                        onKeyDown={onKeyDownPreventMinus}
-                                    />
-                                </label>
-                                <button
-                                    type="button"
-                                    id="applyChanges"
-                                    className="btn"
-                                    onClick={onApplyResize}
-                                >
-                                    {cfg.applyActionStr}
-                                </button>
-                            </>
-                        </div>
+                            <label>
+                                {props.cfg?.thumbnailLabelStr ||
+                                    defaultCfg.thumbnailLabelStr}
+                                <input
+                                    className="number-input"
+                                    type="number"
+                                    min="1"
+                                    name="thumbDimension"
+                                    max={
+                                        props.cfg?.thumbMaxDimension ||
+                                        defaultCfg.thumbMaxDimension
+                                    }
+                                    value={thumbDimension}
+                                    onChange={(e) =>
+                                        setThumbDimension(
+                                            Number(e.target.value),
+                                        )
+                                    }
+                                    onKeyDown={onKeyDownPreventMinus}
+                                />
+                            </label>
+                            <button
+                                type="button"
+                                id="applyChanges"
+                                className="btn"
+                                onClick={onApplyResize}
+                            >
+                                {cfg.applyActionStr}
+                            </button>
+                        </>
+                    </div>
                     <div className="dialog-footer">
                         <button
                             type="button"

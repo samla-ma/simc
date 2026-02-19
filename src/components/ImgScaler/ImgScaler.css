@@ -1,5 +1,5 @@
 @import "../common.css";
-@import "../ResizeWidget.css";
+@import "./ResizeWidget.css";
 @import "./AlignWidget.css";
 
 #img-scaler-overlay {
