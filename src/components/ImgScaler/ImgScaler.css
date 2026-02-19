@@ -28,10 +28,6 @@
     background: var(--light);
 }
 
-.img-scaler-modal::backdrop {
-    background: rgba(0, 0, 0, 0.5);
-}
-
 .dialog-header {
     display: flex;
     justify-content: space-between;

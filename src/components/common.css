@@ -1,8 +1,8 @@
-:root {
-    /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+:host {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    font-size: 1rem; */
+    font-size: 1rem;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -43,7 +43,8 @@ input[type="number"]{
     width: 4rem;
     border: 1px solid var(--border-color-dark);
     border-radius: 4px;
-    font-size: 1rem
+    font-size: 1rem;
+    margin: 0.5rem;
 }
 
 input[type="checkbox"], input[type="radio"]{

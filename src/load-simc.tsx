@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import ImgViewer from "./components/ImgViewer/ImgViewer";
 import ImgScaler from "./components/ImgScaler/ImgScaler";
-import GalleryCreator from "./components/GalleryCreator/GalleryCreator";
+import GalleryCreator from "./components/GalleryScaler/GalleryScaler";
 
 import scalerStyles from "./components/ImgScaler/ImgScaler.css?inline";
 import viewerStyles from "./components/ImgViewer/ImgViewer.css?inline";

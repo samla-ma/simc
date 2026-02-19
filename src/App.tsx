@@ -6,21 +6,25 @@ import { useState } from "react";
 // import cfg from "./cfg.json";
 
 import "./App.css";
-import "./Components/GalleryCreator/GalleryCreator.css";
-import GalleryCreator, { type GalleryCreatorCfg } from "./components/GalleryCreator/GalleryCreator";
+import "./Components/GalleryScaler/GalleryScaler.css";
+import GalleryScaler, {
+    type GalleryScalerCfg,
+    type ImgSize,
+} from "./components/GalleryScaler/GalleryScaler";
 
 function App() {
     const [selectedFiles, setSelectedFiles] = useState<File[] | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const files = event.target.files ? Array.from(event.target.files) : null;
+        const files = event.target.files
+            ? Array.from(event.target.files)
+            : null;
         setSelectedFiles(files);
- 
     };
 
-const [draftTitle, setDraftTitle] = useState("");
+    const [draftTitle, setDraftTitle] = useState("");
 
-const [title, setTitle] = useState("");
+    const [title, setTitle] = useState("");
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -28,6 +32,18 @@ const [title, setTitle] = useState("");
             return;
         }
         // Placeholder for opening/processing the file.
+    };
+
+    const onApply = (
+        files: File[],
+        imgSizes: ImgSize[],
+        thumbSizes: ImgSize[],
+    ) => {
+        files.forEach((file, index) => {
+            console.log(
+                `File: ${file.name}, Image Size: ${imgSizes[index].width}x${imgSizes[index].height}, Thumbnail Size: ${thumbSizes[index].width}x${thumbSizes[index].height}`,
+            );
+        });
     };
 
     return (
@@ -44,23 +60,26 @@ const [title, setTitle] = useState("");
                     />
                 </label>
 
-                <button className="apply-button" onClick={() => setTitle(draftTitle)}>
+                <button
+                    className="apply-button"
+                    onClick={() => setTitle(draftTitle)}
+                >
                     Apply title
                 </button>
 
-                <input 
+                <input
                     value={draftTitle}
                     onChange={(e) => setDraftTitle(e.target.value)}
-                    placeholder="Enter title" 
+                    placeholder="Enter title"
                 />
-
             </form>
 
             {selectedFiles && selectedFiles.length > 0 && (
-                <GalleryCreator 
-                    cfg={null as unknown as GalleryCreatorCfg}
+                <GalleryScaler
+                    cfg={null as unknown as GalleryScalerCfg}
                     files={selectedFiles}
-                    />
+                    onApply={onApply}
+                />
             )}
         </>
     );
