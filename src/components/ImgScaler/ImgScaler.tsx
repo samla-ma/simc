@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import ResizeWidget from "./ResizeWidget";
 import AlignSection from "./AlignWidget";
 
-
 import type { ImgSize } from "./ResizeWidget";
 import type { Alignment } from "./AlignWidget";
 
@@ -46,7 +45,7 @@ const defaultCfg: ImgScalerCfg = {
 
     maxSize: { width: 1200, height: 800 },
     thumbMaxSize: { width: 300, height: 200 },
-}
+};
 
 interface ImgScalerProps {
     file: File;
@@ -92,10 +91,14 @@ const ImgScaler = (props: ImgScalerProps) => {
     const applyClick = () => {
         setIsVisible(false);
         if (props.onApply) {
-            props.onApply(file, imgSize, thumbSize, alignment.current);
+            props.onApply(
+                file,
+                imgSize,
+                thumbEnabled ? thumbSize : { width: 0, height: 0 },
+                alignment.current,
+            );
         }
     };
-
 
     useEffect(() => {
         const url = URL.createObjectURL(file);
@@ -240,8 +243,10 @@ const ImgScaler = (props: ImgScalerProps) => {
                                         <AlignSection
                                             cfg={{
                                                 alignLeftStr: cfg.alignLeftStr,
-                                                alignRightStr: cfg.alignRightStr,
-                                                alignCenterStr: cfg.alignCenterStr,
+                                                alignRightStr:
+                                                    cfg.alignRightStr,
+                                                alignCenterStr:
+                                                    cfg.alignCenterStr,
                                                 title: cfg.alignSectionTitle,
                                             }}
                                             onChange={onAlignChange}

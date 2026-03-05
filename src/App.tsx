@@ -1,16 +1,15 @@
 import { useState } from "react";
-// import ImgScaler from "./components/ImgScaler/ImgScaler";
-// import type { ImgScalerCfg } from "./components/ImgScaler/ImgScaler";
-// import cfg from "./cfg.json";
-
-// import cfg from "./cfg.json";
 
 import "./App.css";
 import "./Components/GalleryScaler/GalleryScaler.css";
+import "./Components/ImgScaler/ImgScaler.css";
 import GalleryScaler, {
     type GalleryScalerCfg,
     type ImgSize,
 } from "./components/GalleryScaler/GalleryScaler";
+
+import ImgScaler from "./components/ImgScaler/ImgScaler";
+import type { ImgScalerCfg } from "./components/ImgScaler/ImgScaler";
 
 function App() {
     const [selectedFiles, setSelectedFiles] = useState<File[] | null>(null);
@@ -22,9 +21,7 @@ function App() {
         setSelectedFiles(files);
     };
 
-    const [draftTitle, setDraftTitle] = useState("");
-
-    const [title, setTitle] = useState("");
+    //const [draftTitle, setDraftTitle] = useState("");
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -34,7 +31,7 @@ function App() {
         // Placeholder for opening/processing the file.
     };
 
-    const onApply = (
+    const onGalleryApply = (
         files: File[],
         imgSizes: ImgSize[],
         thumbSizes: ImgSize[],
@@ -46,9 +43,19 @@ function App() {
         });
     };
 
+    const onImgApply = (
+        file: File,
+        imgSize: ImgSize,
+        thumbSize: ImgSize,
+        align: string,
+    ) => {
+        console.log(
+            `File: ${file.name}, Image Size: ${imgSize.width}x${imgSize.height}, Thumbnail Size: ${thumbSize.width}x${thumbSize.height}, Align: ${align}`,
+        );
+    };
+
     return (
         <>
-            <h1>{title}</h1>
             <form className="file-open-form" onSubmit={handleSubmit}>
                 <label className="file-open-label">
                     Open file
@@ -60,7 +67,7 @@ function App() {
                     />
                 </label>
 
-                <button
+                {/* <button
                     className="apply-button"
                     onClick={() => setTitle(draftTitle)}
                 >
@@ -71,14 +78,22 @@ function App() {
                     value={draftTitle}
                     onChange={(e) => setDraftTitle(e.target.value)}
                     placeholder="Enter title"
-                />
+                /> */}
             </form>
 
-            {selectedFiles && selectedFiles.length > 0 && (
+            {selectedFiles && selectedFiles.length > 1 && (
                 <GalleryScaler
                     cfg={null as unknown as GalleryScalerCfg}
                     files={selectedFiles}
-                    onApply={onApply}
+                    onApply={onGalleryApply}
+                />
+            )}
+
+            {selectedFiles && selectedFiles.length == 1 && (
+                <ImgScaler
+                    cfg={null as unknown as ImgScalerCfg}
+                    file={selectedFiles[0]}
+                    onApply={onImgApply}
                 />
             )}
         </>
