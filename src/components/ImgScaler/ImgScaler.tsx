@@ -54,7 +54,7 @@ interface ImgScalerProps {
     onApply?: (
         file: File,
         imgSize: ImgSize,
-        thumbSize: ImgSize,
+        thumbSize: ImgSize | null,
         alignment: Alignment,
     ) => void;
     onCancel?: () => void;
@@ -94,7 +94,7 @@ const ImgScaler = (props: ImgScalerProps) => {
             props.onApply(
                 file,
                 imgSize,
-                thumbEnabled ? thumbSize : { width: 0, height: 0 },
+                thumbEnabled ? thumbSize : null,
                 alignment.current,
             );
         }

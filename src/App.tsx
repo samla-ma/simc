@@ -46,11 +46,11 @@ function App() {
     const onImgApply = (
         file: File,
         imgSize: ImgSize,
-        thumbSize: ImgSize,
+        thumbSize: ImgSize | null,
         align: string,
     ) => {
         console.log(
-            `File: ${file.name}, Image Size: ${imgSize.width}x${imgSize.height}, Thumbnail Size: ${thumbSize.width}x${thumbSize.height}, Align: ${align}`,
+            `File: ${file.name}, Image Size: ${imgSize.width}x${imgSize.height}, Thumbnail Size: ${thumbSize ? `${thumbSize.width}x${thumbSize.height}` : "N/A"}, Align: ${align}`,
         );
     };
 
