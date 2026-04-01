@@ -185,9 +185,9 @@ const GalleryScaler = (props: GalleryScalerProps) => {
 
     return (
         isVisible && (
-            <div id="img-scaler-overlay">
+            <div id="gallery-scaler-overlay">
                 <div
-                    className="img-scaler-modal"
+                    className="gallery-scaler-modal"
                     onClick={(event) => event.stopPropagation()}
                 >
                     <div className="dialog-header">
@@ -207,7 +207,7 @@ const GalleryScaler = (props: GalleryScalerProps) => {
                                 id={`previewImage-${index}`}
                                 key={index}
                                 src={url}
-                                className="preview-image"
+                                className="preview-gallery-image"
                                 onLoad={handleImageLoad}
                                 width={
                                     thumbSizes.length === objectUrls.length
