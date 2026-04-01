@@ -86,3 +86,4 @@ export function unloadGalleryScaler(elementId: string) {
     const { root } = getRoot(useShadowHost, elementId);
     root.unmount();
 }
+

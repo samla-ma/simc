@@ -15,7 +15,7 @@
 
 #img-viewer-modal {
     padding: 10px;
-    width: 80%; /* Adjust width as needed */
+    width: 90%; /* Adjust width as needed */
     min-width: 300px;
     height: 90%;
 
@@ -47,8 +47,8 @@
 
 #image {
     margin: 0 auto;
-    max-width: 1200px;
-    max-height: 80vh;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
 }
