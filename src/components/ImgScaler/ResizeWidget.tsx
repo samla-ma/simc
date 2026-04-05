@@ -71,6 +71,7 @@ const ResizeWidget = (props: ResizeWidgetProps) => {
 
     const onApply = () => {
         const correctedSize = resize(draftImgSize);
+        setDraftImgSize(correctedSize);
         if (props.onChange) {
             props.onChange(correctedSize);
         }
